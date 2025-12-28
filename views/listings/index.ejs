@@ -1,0 +1,99 @@
+<% layout('./layouts/boilerplate.ejs') -%>
+<!-- <form method="get" action="/listings/new">
+    <button>Create new Listing</button>
+</form>
+ -->
+<div class="d-md-none text-end mt-3 mb-2">
+  <button
+    class="btn btn-outline-danger"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#filtersCollapse"
+  >
+    Filters
+  </button>
+</div>
+
+<div class="collapse d-md-block" id="filtersCollapse">
+<div id="filters">
+
+  <a href="/listings?category=trending" class="filter <%= category === 'trending' ? 'active' : '' %>">
+    <div><i class="fa-solid fa-fire"></i></div>
+    <p>Trending</p>
+  </a>
+
+  <a href="/listings?category=rooms" class="filter <%= category === 'rooms' ? 'active' : '' %>">
+    <div><i class="fa-solid fa-bed"></i></div>
+    <p>Rooms</p>
+  </a>
+
+  <a href="/listings?category=cities" class="filter <%= category === 'cities' ? 'active' : '' %>">
+    <div><i class="fa-solid fa-mountain-city"></i></div>
+    <p>Iconic Cities</p>
+  </a>
+
+  <a href="/listings?category=mountains" class="filter <%= category === 'mountains' ? 'active' : '' %>">
+    <div><i class="fa-solid fa-mountain"></i></div>
+    <p>Mountains</p>
+  </a>
+
+  <a href="/listings?category=castles" class="filter <%= category === 'castles' ? 'active' : '' %>">
+    <div><i class="fa-brands fa-fort-awesome"></i></div>
+    <p>Castles</p>
+  </a>
+
+  <a href="/listings?category=camping" class="filter <%= category === 'camping' ? 'active' : '' %>">
+    <div><i class="fa-solid fa-campground"></i></div>
+    <p>Camping</p>
+  </a>
+
+  <a href="/listings?category=farms" class="filter <%= category === 'farms' ? 'active' : '' %>">
+    <div><i class="fa-solid fa-cow"></i></div>
+    <p>Farms</p>
+  </a>
+
+  <a href="/listings?category=arctic" class="filter <%= category === 'arctic' ? 'active' : '' %>">
+    <div><i class="fa-regular fa-snowflake"></i></div>
+    <p>Arctic</p>
+  </a>
+  <a href="/listings?category=domes" class="filter <%= category === 'domes' ? 'active' : '' %>">
+    <div><i class="fa-solid fa-igloo"></i></div>
+    <p>Domes</p>
+  </a>
+  <a href="/listings?category=boats" class="filter <%= category === 'boats' ? 'active' : '' %>">
+    <div><i class="fa-solid fa-ship"></i></div>
+    <p>Boats</p>
+  </a>
+  <div class="tax-toggle">
+    <div class="form-check-reverse form-switch">
+      <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+      <label class="form-check-label" for="switchCheckDefault">Display total after taxes</label>
+    </div>
+  </div>  
+</div>
+</div>
+
+
+<% if(category) { %>
+  <h5 class="mb-3">
+    Showing results for: <strong><%= category.toUpperCase() %></strong>
+  </h5>
+<% } %>
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+<% for(let sample of allListings){ %>
+    <a href="/listings/<%= sample._id %>" class="listing-img-link">
+    <div class="card col listing-card">
+
+    <img src="<%= sample.image.url %>" class="card-img-top" alt="listing-image" style="height: 20rem;">
+    <!-- imp--card-img-overlay is for image pe styling like koi words dikhane hover change hona jaisa -->
+    <div class="card-img-overlay"></div>
+    <div class="card-body">
+        <p class="card-text"><b><%= sample.title %></b> <br> &#8377;<%= sample.price.toLocaleString("en-IN");%> /night
+        <i class="tax-info">&nbsp; +18% GST</i></p>
+    </div>
+</div>
+</a>
+<% } %>
+</div>
+
+<script src="/js/index_script.js"></script>
