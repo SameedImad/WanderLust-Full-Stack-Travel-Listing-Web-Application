@@ -143,7 +143,6 @@ body{
   padding: 1rem;
   display: flex;
   align-items: center;
-  margin-left: auto;
 }
 @media (max-width: 768px) {
   #filters {
@@ -156,4 +155,7 @@ body{
     margin-left: 0;       
     padding-left: 0;
   }
+}
+.listing-div{
+    margin-top: 1rem;
 }
