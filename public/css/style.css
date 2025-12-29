@@ -100,9 +100,6 @@ body{
 .show-img{
     height: 35vh;
 }
-.btns{
-    display: flex;
-}
 
 /* map */
 #map{
@@ -139,6 +136,8 @@ body{
 .filter {
     text-align: center;
     opacity: 0.7;
+    color: #000;
+    text-decoration: none;
     margin-right: 2rem;
     margin-top: 2rem;
 }
