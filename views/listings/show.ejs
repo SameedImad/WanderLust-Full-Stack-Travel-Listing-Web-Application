@@ -40,7 +40,7 @@
 
             <% if (currUser && currUser._id.equals(sample.owner._id)) { %>
                 <div class="btns d-flex gap-2 mt-2 mb-3">
-                    <a href="/listings/<%= sample._id %>/edit" class="btn btn-dark me-2 edit_btn" style="background-color:#fe424d;">Edit</a>
+                    <a href="/listings/<%= sample._id %>/edit" class="btn btn-dark me-2 edit_btn" style="background-color:#fe424d;border: none">Edit</a>
                     <form action="/listings/<%= sample._id %>?_method=DELETE" method="POST" class="d-inline">
                         <button class="btn btn-dark">Delete</button>
                     </form>
