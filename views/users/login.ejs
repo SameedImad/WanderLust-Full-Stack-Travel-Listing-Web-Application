@@ -1,18 +1,22 @@
 <% layout('./layouts/boilerplate.ejs') -%>
-    <div class="row">
-        <h3 class="col-6 offset-2 mt-2">Login for WanderLust</h3>
-        <div class="col-6 offset-2 mt-2">
-            <form action="/login" method="post" class="needs-validation" novalidate>
-                <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
-                    <input type="text" name="username" id="username" required class="form-control">
-                </div>   
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" name="password" id="password" required class="form-control">
-                    <div class="invalid-feedback">Please enter password!</div>
-                </div>
-                <button class="btn btn-outline-success">Login</button>                   
-            </form>
+    <div class="row mt-5">
+        <div class="col-12 col-md-6 offset-md-3 text-center mb-4">
+            <h1>Login to Wanderlust</h1>
+        </div>
+        <div class="col-12 col-md-6 offset-md-3">
+            <div class="card shadow-sm p-4">
+                <form action="/login" method="post" class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" name="username" id="username" required class="form-control">
+                    </div>   
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" name="password" id="password" required class="form-control">
+                        <div class="invalid-feedback">Please enter password!</div>
+                    </div>
+                    <button class="btn btn-outline-success">Login</button>                   
+                </form>
+            </div>
         </div>
     </div>

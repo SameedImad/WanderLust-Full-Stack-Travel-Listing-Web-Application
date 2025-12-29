@@ -3,7 +3,7 @@
         background-color: #fe424d;
         color: #fff;
         border-radius: 25px;
-        padding: 0 1rem 0 1rem;
+        font-weight: 500;
     }
     .btn-search:hover{
         background-color: #fe424d;
@@ -15,7 +15,8 @@
     }
     .search-input{
         border-radius: 25px;
-        padding: 0.5rem 3rem;
+        padding: 0.45rem 1rem;
+        font-size: 0.9rem;
     }
 </style>
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
@@ -27,24 +28,24 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link" href="/listings">Explore</a>
+                <a class="nav-link fw-medium" href="/listings">Explore</a>
             </div>
-            <div class="navbar-nav ms-auto">
+            <div class="navbar-nav mx-auto">
                     <form class="d-flex" role="search" action="/listings" method="GET">
                         <input name="search" class="form-control me-2 search-input" type="search" placeholder="Search destinations" value="<%=search || ''%>"/>
-                        <button class="btn btn-search" type="submit">
+                        <button class="btn btn-search px-3" type="submit">
                             <i class="fa-solid fa-magnifying-glass"></i>Search</button>
                     </form>
             </div>
             <div class="navbar-nav ms-auto">
                 <!-- //for currUser we define in res.local for accessing -->
-                <a class="nav-link" href="/listings/new">Airbnb your home</a>
+                <a class="nav-link fw-medium" href="/listings/new">Airbnb your home</a>
                 <%if(!currUser){%>
-                <a class="nav-link" href="/signup"><b>SignUp</b></a>
-                <a class="nav-link" href="/login"><b>Login</b></a>
+                <a class="nav-link fw-bold" aria-current="page" href="/signup"><b>SignUp</b></a>
+                <a class="nav-link fw-bold" href="/login"><b>Login</b></a>
                 <%}%>
                 <%if(currUser){%>
-                <a class="nav-link" href="/logout"><b>Logout</b></a>
+                <a class="nav-link fw-bold" href="/logout"><b>Logout</b></a>
                 <%}%>
 
             </div>
